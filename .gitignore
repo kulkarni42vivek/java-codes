@@ -1,0 +1,26 @@
+# Compiled Java files
+bin/
+*.class
+
+# Package Files
+*.jar
+*.war
+*.ear
+
+# IDE files
+.classpath
+.project
+.settings/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Build directories
+target/
+build/
+
+# IDE-specific files
+.vscode/
+.idea/
+*.iml

@@ -47,7 +47,7 @@ class NameComparator implements  Comparator<Movie2>{
         return o1.id - o2.id;
     }
 }
-public class Comp {
+public class ComparableUsage {
     public static void main(String[] args) {
         List<Movie> llist = Arrays.asList(new Movie(2, "va")
                 , new Movie(2, "va")

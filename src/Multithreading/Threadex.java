@@ -26,15 +26,12 @@ public class Threadex extends Thread{
         }
     }
     public static void main(String[] args) {
-//        Threadex thrad = new Threadex();
-//        thrad.run();
-//        Threadex thread2 = new Threadex();
-//        thread2.start();
+        
 
-        Thread8 threadv = new Thread8();
-        Thread8 thr = new Thread8();
-        threadv.run();
-        thr.run();
+        Thread thread1 = new Thread(new Thread8());
+        Thread thread2 = new Thread(new Thread8());
+        thread1.start();
+        thread2.start();
 
     }
 }

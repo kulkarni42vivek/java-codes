@@ -1,16 +1,68 @@
 package Java8.StreamApi;
-import java.util.*;
+
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Optional;
+import java.util.Set;
+import java.util.function.Function;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-public class StreamsExamples1 {
-    public static void main(String[] args) {
-
-        List<Integer>list =  Arrays.asList(11,4,35,7,51,61,451,19);
-        Optional<Integer> sum  = list.stream().reduce(Integer::sum);
+public class Stream2IntermediateOperators {
+	public static void main(String[] args) {
+		List<String> list =  Arrays.asList("vivek","vvi","test","test");
+		List<String> llist = list.stream()
+				.filter(a->a.startsWith("v"))
+				.collect(Collectors.toList());
+		
+		list.stream()
+			.map(a->a.toUpperCase())
+			.collect(Collectors.toList());
+		
+		list.stream()
+			.sorted()
+			.collect(Collectors.toList());
+		list.stream()
+			.sorted((a,b)->a.compareTo(b))
+			.collect(Collectors.toList());
+		
+		list.stream()
+			.sorted()
+			.collect(Collectors.toList());
+		//list.stream().sorted(Comparator.comparing(Function.identity()).reversed()).collect(Collectors.toList());
+		
+		// for finding distinct
+		list.stream()
+			.distinct()
+			.collect(Collectors.toList());
+		
+		// limit
+		list.stream()
+			.limit(2)
+			.collect(Collectors.toList());
+		
+		// peek - very important while debugging
+		long vlaue = list.stream()
+					.peek(System.out::println).count();
+		System.out.println(vlaue);
+		
+		
+		// ma and min 
+		list.stream()
+			.min(Comparator.naturalOrder());
+		
+		
+		
+		// eaple 
+		
+		List<Integer>list3 =  Arrays.asList(11,4,35,7,51,61,451,19);
+        Optional<Integer> sum  = list3.stream().reduce(Integer::sum);
         System.out.println(sum.get());
 
-        Double answer =  list.stream().mapToInt(e-> e).average().getAsDouble();
+        Double answer =  list3.stream().mapToInt(e-> e).average().getAsDouble();
         System.out.println(answer);
 
         List<Integer>list2 =  Arrays.asList(1,10,20,30,15);
@@ -55,6 +107,6 @@ public class StreamsExamples1 {
 
         Stream.of(array).forEach(System.out::println);
 
-
-    }
+		
+	}
 }

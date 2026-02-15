@@ -3,7 +3,7 @@ import java.net.CookieHandler;
 import java.util.*;
 import java.util.stream.Collectors;
 
-public class StudentOperations {
+public class Stream9Operations {
 
     public static void main(String[] args) {
         List<Student> list = Arrays.asList(
@@ -18,27 +18,51 @@ public class StudentOperations {
                 new Student(9, "Sonu", "Shankar", 27, "Female", "Computer Engineering", 2018, "Karnataka", 7),
                 new Student(10, "Shubham", "Pandey", 26, "Male", "Instrumentation Engineering", 2017, "Mumbai", 98));
 
-        //		1- Find list of students whose first name starts with alphabet A
-        System.out.println(list.stream().filter(x-> x.getFirstName().startsWith("A")).collect(Collectors.toList()));
-        System.out.println("----------------------------------------------------");
+        //1. Find list of students whose first name starts with alphabet A
+        list.stream()
+        	.filter(a->a.getFirstName().startsWith("a"))
+        	.collect(Collectors.toList());
+        
         //		2- Group The Student By Department Names
-        Map<String, List<Student>> mapData = list.stream().collect(Collectors.groupingBy(Student::getDepartmantName));
-        Map<String,Long> mapData2 = list.stream().collect(Collectors.groupingBy(Student::getDepartmantName,Collectors.counting()));
+        Map<String, List<Student>>mapData =  list.stream()
+        	.collect(Collectors.groupingBy(Student::getDepartmantName));
+        
+        Map<String, Long> mapData2 = list.stream()
+        	.collect(Collectors.groupingBy(Student::getDepartmantName , Collectors.counting()));
+       
         for(Map.Entry<String , List<Student>> entry : mapData.entrySet()) {
             System.out.println(entry.getKey() + " --> " + entry.getValue());
         }
-        System.out.println("----------------------------------------------------");
+        
+       
         System.out.println(list.stream().count());
-        System.out.println("----------------------------------------------------");
+        
         // 4- Find the max age of student
-        System.out.println(list.stream().mapToInt(x->x.getAge()).max().getAsInt());
+        
+        list.stream()
+        	.map(a-> a.getAge())
+        	.max(Comparator.naturalOrder());
+        
+        list.stream()
+        	.mapToInt(x->x.getAge())
+        	.max().getAsInt();
+        
         System.out.println("----------------------------------------------------");
-        System.out.println(list.stream().map(x->x.getDepartmantName()).distinct().collect(Collectors.toList()));
+        list.stream()
+        	.map(x->x.getDepartmantName())
+        	.distinct()
+        	.collect(Collectors.toList());
+        
         System.out.println("----------------------------------------------------");
-        System.out.println(list.stream().collect(Collectors.groupingBy(Student::getDepartmantName, Collectors.counting())));
+        list.stream()
+        	.collect(Collectors.groupingBy(Student::getDepartmantName, Collectors.counting()));
         System.out.println("----------------------------------------------------");
-        System.out.println(list.stream().collect(Collectors.groupingBy(s->s.getGender() , Collectors.averagingInt(Student::getAge))));
+        
+        list.stream()
+        	.collect(Collectors.groupingBy(Student::getGender,Collectors.averagingLong(Student::getAge)));
+        
         System.out.println("----------------------------------------------------");
+        
         Map.Entry<String, Long> map = list.stream()
                 .collect(Collectors.groupingBy(Student::getDepartmantName , Collectors.counting()))
                 .entrySet().stream()
@@ -46,8 +70,12 @@ public class StudentOperations {
                 .get();
         System.out.println(map);
         System.out.println("----------------------------------------------------");
+        
         // 11- Find the Students who stays in Delhi and sort them by their names
-        System.out.println(list.stream().filter(x-> x.getCity().equals("Delhi")).sorted(Comparator.comparing(Student::getFirstName)));
+        list.stream()
+        	.filter(x-> x.getCity().equals("Delhi"))
+        	.sorted(Comparator.comparing(Student::getFirstName));
+        
         System.out.println("----------------------------------------------------");
         System.out.println(list.stream().collect(Collectors.groupingBy(Student::getDepartmantName, Collectors.averagingDouble(Student::getAge))));
         System.out.println("----------------------------------------------------");

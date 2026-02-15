@@ -7,6 +7,21 @@ import java.util.stream.Collectors;
 public class HighestFreq {
     public static void main(String[] args) {
         String name  = "asfsdfsas";
+        
+        // most used character 
+        Character value = name.chars()
+        	.mapToObj(a->(char)a)
+        	.collect(Collectors.groupingBy(Function.identity() , Collectors.counting()))
+        	.entrySet()
+        	.stream()
+        	.sorted((a,b)->(int)(b.getValue() - a.getValue()))
+        	.collect(Collectors.toList())
+        	.get(0)
+        	.getKey();
+        System.out.println(value);
+        
+        
+        
         Map.Entry<Character, Long> hmap = name
                 .chars()
                 .mapToObj(x-> (char) x)

@@ -49,6 +49,7 @@ public class OptionalEx1 {
         String[] array  = new String[]{"afd","adsfd","wefd"};
         Optional<String> any = Arrays.stream(array).filter(x-> x.startsWith("a")).findAny();
         System.out.println(any.orElse("name"));
+        
 
     }
 }

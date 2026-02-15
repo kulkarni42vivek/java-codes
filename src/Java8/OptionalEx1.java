@@ -50,6 +50,11 @@ public class OptionalEx1 {
         Optional<String> any = Arrays.stream(array).filter(x-> x.startsWith("a")).findAny();
         System.out.println(any.orElse("name"));
         
+        
+        // rules for optionals
+        // 1. use for returns
+        // 2. dont use for parameters or object parameters
+        // 3. always check for get , if dont its bad practice
 
     }
 }

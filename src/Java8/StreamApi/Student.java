@@ -24,7 +24,11 @@ public class Student {
         this.city = city;
         this.rank = rank;
     }
-    
+    public Student(int id , String firstName) {
+		super();
+		this.id = id;
+		this.firstName = firstName;
+	}
     
     
     public int getId() {

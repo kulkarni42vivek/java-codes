@@ -5,12 +5,12 @@ public class Control {
     public static void main(String[] args) {
         boolean value = false;
 
-        // one
+        // If statement
         if(value){
             System.out.println(value );
         }
 
-        // two
+        // If else statement
         if(value){
             System.out.println("nothing");
         }
@@ -18,7 +18,7 @@ public class Control {
             System.out.println("nothing");
         }
 
-        // three
+        // If - else if - else statement
         if(value){
             System.out.println("one");
         } else if (value) {
@@ -28,7 +28,7 @@ public class Control {
             System.out.println("three");
         }
 
-        // four
+        // Switch statement
         int a = 4;
         switch (a) {
             case 1:
@@ -48,19 +48,20 @@ public class Control {
                 break;
         }
 
-        // for loop
+        // Loops
+        // For loop
         for (int i=0;i<10;i++){
             System.out.println(i);
         }
 
-        // while loop
+        // While loop
         int i= 20;
         while (i<10){
             System.out.println(i);
             i--;
         }
 
-        // do while loop
+        // Do while loop
         do{
             System.out.println(i);
             i--;

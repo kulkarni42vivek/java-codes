@@ -1,32 +1,39 @@
 package CoreJava;
 
-/*main features-
-multithreaded
-oops
-java-> compiler -> byte code*/
+/*
+ * main features-
+ * multithreaded
+ * oops
+ * java-> compiler -> byte code
+*/
 
-/*jdk jre jvm
-jvm inside jre inside jdk*/
+// JDK, JRE, JVM
+// JVM inside JRE inside JDK
 
-//jit compiler
+
+// JIT compiler
 
 public class BasicInfo {
 
+	// static variable example 
     static int staticVariable = 12;
 
     void print(){
+    	// local variable 
         int localVarible = 78 ;
     }
 
     public static void main(String[] args) {
         System.out.println("HELLO WORLD");
 
-        /*varibles types ->
-        local varible,  static vairalbe , instance variable*/
+        // Variables types ->
+        // 1. Local variable 
+        // 2. Static variable 
+        // 3. Instance variable
 
         int instanceVarible = 10 ;
 
-        // widening
+        // variable widening
         int value = 45;
         float a = value;
 
@@ -34,14 +41,24 @@ public class BasicInfo {
         int b=130;
         byte c=(byte)b;
 
-        // data types in the java
+        // Data types in the java
         // primitives - > int , byte, short , long , float , boolean , double , char
-        // non primitive -> Integeer , string , objects
+        // non primitive -> Integer , string , objects
 
 
         // operators in java
         // example - > unary , arithmatic , logical , shift , relational , ternary , bitwise , assignment
-
+        // arithmatic  --> + - * / %
+        // unary - ++ , --  , a++, ++a, a--,--a ; 
+        
+        // assignment operator  - 
+        // = , += , -= , *= , %= , |=, &=
+        
+        // relational ->> == , != , < , > ,<=,>= 
+        
+        // logical ->> && , || ,! - and or and not
+        
+        // ternary operator -->> int max  = a >b ? a:b ; 
         // operator precedence
         // unary > arithmatic > shift > relational > bitwise > logical > ternary > asignment
 

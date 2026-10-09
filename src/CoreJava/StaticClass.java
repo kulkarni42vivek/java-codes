@@ -8,6 +8,8 @@ package CoreJava;
 //A static method can be invoked without the need for creating an instance of a class.
 //A static method can access static data member and can change the value of it.
 
+// Static method cannot use/ invoke instance variables.
+
 class Counter {
     static int count = 0 ;
     Counter(){

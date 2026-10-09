@@ -1,5 +1,6 @@
 package CoreJava;
 
+// charAt implementation using character array
 public class CharAtInternal {
     public static char getCharacter(String name , int number){
         char[] charArray = name.toCharArray();

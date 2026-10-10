@@ -2,7 +2,7 @@ package CoreJava.ExceptionHandling;
 
 class CustomE extends Exception{
     public CustomE(String value){
-        super("Custom exception called !");
+        super("Custom exception called !" + value);
     }
 }
 
@@ -11,7 +11,6 @@ public class CustomException {
         try{
             int value  = 10/0 ;
         }
-
         catch(Exception e){
             throw new CustomE("value");
         }

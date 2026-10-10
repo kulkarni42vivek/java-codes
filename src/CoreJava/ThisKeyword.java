@@ -4,6 +4,7 @@ package CoreJava;
 
 class One{
     int id ;
+    
     // 3. to invoke default constructor
     One(int id ){
         this();

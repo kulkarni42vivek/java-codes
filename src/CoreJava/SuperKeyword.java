@@ -1,7 +1,10 @@
 package CoreJava;
-// super keyword - used to refer to immediate parent class
-// example - check for variable and method
-// it can be used to invoke parent class constructor
+
+
+// Super keyword - used to refer to immediate parent class
+// Example - check for variable and method
+// It can be used to invoke parent class constructor
+
 class Eleven{
     int id = 10;
     Eleven(){

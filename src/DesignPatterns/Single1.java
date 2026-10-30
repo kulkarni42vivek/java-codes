@@ -31,8 +31,8 @@ class EagerSingleTonNotClone implements Cloneable{
 		return instance;
 	}
 	
-	clone(){
-		throw Exception("Not allowed");
+	void clone(){
+		throw new Exception("Not allowed");
 	}
 }
 public class Single1 {
